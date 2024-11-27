@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Eplan",
+  "version": "1.0",
+  "description": "Automatically check marks items based on noteBox content.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://jobs.pooleng.com/jobs/jobs-all/view-job/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
